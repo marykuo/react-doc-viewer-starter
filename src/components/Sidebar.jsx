@@ -1,14 +1,29 @@
 import { Link, NavLink } from "react-router-dom";
-
-// 模擬的文件資料，實際開發時可以放在單獨的 data/files.json
-const fileList = [
-  { id: "intro", title: "🚀 快速入門", type: "markdown" },
-  { id: "install-guide", title: "📦 安裝指南", type: "markdown" },
-  { id: "api-reference", title: "📚 API 文件", type: "pdf" },
-  { id: "design-assets", title: "🎨 設計規範", type: "pdf" },
-];
+import { useState, useEffect } from "react";
+import { fetchJson } from "../utils/fetchJson";
 
 function Sidebar() {
+  const [fileList, setFileList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchFiles = async () => {
+      setLoading(true);
+      setError(false);
+      try {
+        const data = await fetchJson("/data/files.json");
+        setFileList(data);
+        setLoading(false);
+      } catch (err) {
+        setError(true);
+        setLoading(false);
+        console.error(err);
+      }
+    };
+    fetchFiles();
+  }, []);
+
   return (
     <div className="sidebar-container">
       <ul style={{ listStyle: "none", padding: 0 }}>
@@ -24,25 +39,28 @@ function Sidebar() {
           </NavLink>
         </li>
         <hr />
-        {fileList.map((file) => (
-          <li key={file.id} style={{ marginBottom: "0.5rem" }}>
-            {/* 使用 NavLink 可以輕鬆處理「選中狀態」的樣式 */}
-            <NavLink
-              to={`/docs/${file.id}`}
-              style={({ isActive }) => ({
-                display: "block",
-                padding: "5px 10px",
-                borderRadius: "4px",
-                textDecoration: "none",
-                backgroundColor: isActive ? "#e7f3ff" : "transparent",
-                color: isActive ? "#007bff" : "#555",
-              })}
-            >
-              {file.type === "pdf" ? "📄 " : "📝 "}
-              {file.title}
-            </NavLink>
-          </li>
-        ))}
+        {loading && <li>載入中...</li>}
+        {error && <li style={{ color: "red" }}>❌ 無法載入文件列表</li>}
+        {!loading &&
+          !error &&
+          fileList.map((file) => (
+            <li key={file.id} style={{ marginBottom: "0.5rem" }}>
+              <NavLink
+                to={`/docs/${file.id}`}
+                style={({ isActive }) => ({
+                  display: "block",
+                  padding: "5px 10px",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  backgroundColor: isActive ? "#e7f3ff" : "transparent",
+                  color: isActive ? "#007bff" : "#555",
+                })}
+              >
+                {file.type === "pdf" ? "📄 " : "📝 "}
+                {file.title}
+              </NavLink>
+            </li>
+          ))}
       </ul>
     </div>
   );

@@ -3,12 +3,21 @@
         "id": "1",
         "title": "入門指南",
         "type": "markdown",
+        "name": "intro.md",
         "path": "/content/intro.md"
     },
     {
         "id": "2",
+        "title": "安裝說明",
+        "type": "markdown",
+        "name": "setup.md",
+        "path": "/content/setup.md"
+    },
+    {
+        "id": "3",
         "title": "產品規格書",
         "type": "pdf",
+        "name": "spec.pdf",
         "path": "/docs/spec.pdf"
     }
 ]
