@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "title": "入門指南",
+        "type": "markdown",
+        "path": "/content/intro.md"
+    },
+    {
+        "id": "2",
+        "title": "產品規格書",
+        "type": "pdf",
+        "path": "/docs/spec.pdf"
+    }
+]

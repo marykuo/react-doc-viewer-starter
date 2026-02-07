@@ -4,7 +4,10 @@
 
 ```text
 my-doc-site/
-├── public/                # 放置 PDF 檔案，讓瀏覽器能直接透過 URL 讀取
+├── public/                # 放置 Markdown 和 PDF 檔案，讓瀏覽器能直接透過 URL 讀取
+│   ├── content/
+│   │   ├── intro.md
+│   │   └── setup.md
 │   └── docs/
 │       ├── manual.pdf
 │       └── spec.pdf
@@ -18,9 +21,6 @@ my-doc-site/
 │   ├── pages/             # 頁面級組件
 │   │   ├── Home.jsx       # 首頁
 │   │   └── DocDetail.jsx  # 文件詳情頁
-│   ├── content/           # 放置 Markdown 檔案 (如果想打包進去的話)
-│   │   ├── intro.md
-│   │   └── setup.md
 │   ├── App.jsx            # 路由配置 (React Router)
 │   └── main.jsx
 ├── data/                  # (選配) 用一個 JSON 紀錄文件清單

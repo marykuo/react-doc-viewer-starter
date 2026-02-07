@@ -1,17 +1,44 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 function DocDetail() {
-  const { docId } = useParams();
+  const { docId } = useParams(); // 取得網址上的 id
+  const [content, setContent] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  // 實務上這裡會根據 docId 去索引你的 files.json
-  // 例如：const file = fileList.find(f => f.id === docId);
+  useEffect(() => {
+    // 每次 docId 改變時，就去抓新檔案
+    setLoading(true);
+    setError(false);
+
+    // 假設你的檔案放在 public/content/ 之下，檔名為 {docId}.md
+    fetch(`/content/${docId}.md`)
+      .then((res) => {
+        if (!res.ok) throw new Error("找不到檔案");
+        return res.text();
+      })
+      .then((text) => {
+        setContent(text);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(true);
+        setLoading(false);
+      });
+  }, [docId]);
+
+  if (loading) return <div>載入中...</div>;
+  if (error) return <div>❌ 找不到該文件，請確認檔案路徑是否正確。</div>;
 
   return (
-    <div>
-      <h1>正在閱讀：{docId}</h1>
-      {/* 這裡之後會放入 <MarkdownView /> 或 <PDFView /> */}
-      <div className="content-viewer">{/* 邏輯判斷渲染器... */}</div>
-    </div>
+    <article className="prose lg:prose-xl">
+      {/* remarkGfm 讓 Markdown 支援表格、任務列表等功能 */}
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+    </article>
   );
 }
 
