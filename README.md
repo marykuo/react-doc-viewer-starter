@@ -1,10 +1,14 @@
-# insurance-ebook
+# react-doc-viewer-starter
+
+## User Guide
+
+You can easily create a documentation website using this React starter template. Just modify the URLs in `files.json` or `config.js` to point to your own Markdown and PDF files, and the site will display your content.
 
 ## Project Structure
 
 ```text
 my-doc-site/
-├── public/                # 放置 Markdown 和 PDF 檔案，讓瀏覽器能直接透過 URL 讀取
+├── public/                # 放置 Markdown 和 PDF 檔案
 │   ├── content/
 │   │   ├── intro.md
 │   │   └── setup.md
