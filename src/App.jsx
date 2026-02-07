@@ -1,34 +1,36 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./assets/App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Home from "./pages/Home";
+import DocDetail from "./pages/DocDetail";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div style={{ display: "flex", minHeight: "100vh" }}>
+        {/* 左側固定導覽列 */}
+        <nav
+          style={{
+            width: "250px",
+            borderRight: "1px solid #ddd",
+            padding: "1rem",
+          }}
+        >
+          <Sidebar />
+        </nav>
+
+        {/* 右側動態內容區 */}
+        <main style={{ flex: 1, padding: "2rem" }}>
+          <Routes>
+            {/* root route */}
+            <Route path="/" element={<Home />} />
+            {/* dynamic route: shows document detail based on docId */}
+            <Route path="/docs/:docId" element={<DocDetail />} />
+            {/* catch-all route for undefined paths */}
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </Router>
   );
 }
 
