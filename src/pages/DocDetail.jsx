@@ -11,24 +11,22 @@ function DocDetail() {
 
   useEffect(() => {
     // 每次 docId 改變時，就去抓新檔案
-    setLoading(true);
-    setError(false);
-
-    // 假設你的檔案放在 public/content/ 之下，檔名為 {docId}.md
-    fetch(`/content/${docId}.md`)
-      .then((res) => {
+    const fetchContent = async () => {
+      setLoading(true);
+      setError(false);
+      try {
+        const res = await fetch(`/content/${docId}.md`);
         if (!res.ok) throw new Error("找不到檔案");
-        return res.text();
-      })
-      .then((text) => {
+        const text = await res.text();
         setContent(text);
         setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error(err);
         setError(true);
         setLoading(false);
-      });
+      }
+    };
+    fetchContent();
   }, [docId]);
 
   if (loading) return <div>載入中...</div>;
