@@ -1,0 +1,12 @@
+.doc-container img {
+  /* 限制圖片最大寬度，適應不同螢幕尺寸 */
+  max-width: 50%;
+  /* 維持長寬比 */
+  height: auto;
+  /* 置中 */
+  display: block;
+  /* 上下間距 */
+  margin: 1.5rem auto;
+  /* 圓角 */
+  border-radius: 8px;
+}
