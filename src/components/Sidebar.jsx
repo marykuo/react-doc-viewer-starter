@@ -4,7 +4,9 @@ import { fetchJson } from "../utils/fetchJson";
 
 // 遞迴子組件
 function SidebarItem({ item, depth = 0 }) {
-  const [isOpen, setIsOpen] = useState(true); // 控制資料夾展開/收合
+  const [isOpen, setIsOpen] = useState(
+    item.isOpen !== undefined ? item.isOpen : true,
+  );
   const hasChildren = item.type === "folder" && item.children;
 
   // 根據深度計算左側縮排

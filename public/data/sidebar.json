@@ -30,9 +30,16 @@
                 "type": "pdf"
             },
             {
-                "id": "not-exist",
-                "title": "不存在的文件",
-                "type": "markdown"
+                "title": "文件範例",
+                "type": "folder",
+                "isOpen": false,
+                "children": [
+                    {
+                        "id": "not-exist",
+                        "title": "不存在的文件",
+                        "type": "markdown"
+                    }
+                ]
             }
         ]
     }
