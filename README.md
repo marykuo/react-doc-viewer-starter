@@ -35,19 +35,10 @@ my-doc-site/
 
 ## Setup Steps
 
-1. create Vite project
-
-```bash
-# check node version
-node -v
-
-# create vite project
-npm create vite@latest your-project-name -- --template react-swc
-```
+1. git clone this repository
 
 2. setup Vite config
-
-在 `vite.config.js` 中，必須設定 `base` 路徑以對應 GitHub Pages 的 URL：
+   - 在 `vite.config.js` 中，必須設定 `base` 路徑以對應 GitHub Pages 的 URL：
 
 ```javascript
 export default {
@@ -56,11 +47,7 @@ export default {
 };
 ```
 
-3. create GitHub Actions workflow
-
-Create a file at `.github/workflows/deploy.yml`.
-
-4. run GitHub Actions
+3. run GitHub Actions to deploy to GitHub Pages
 
 ## Local Development
 

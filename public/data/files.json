@@ -10,7 +10,12 @@
         "path": "/content/setup.md"
     },
     {
-        "id": "3",
+        "id": "markdown.md",
+        "type": "markdown",
+        "path": "/content/markdown.md"
+    },
+    {
+        "id": "spec.pdf",
         "type": "pdf",
         "path": "/docs/spec.pdf"
     }

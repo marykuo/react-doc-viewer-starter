@@ -12,33 +12,27 @@
                 "id": "2",
                 "title": "安裝說明",
                 "type": "markdown"
-            },
-            {
-                "id": "3",
-                "title": "產品規格書",
-                "type": "pdf"
             }
         ]
     },
     {
-        "title": "技術文件",
+        "title": "文件範例",
         "type": "folder",
         "children": [
             {
-                "id": "4",
-                "title": "API 規格書 v1",
+                "id": "markdown.md",
+                "title": "markdown 語法指南",
+                "type": "markdown"
+            },
+            {
+                "id": "spec.pdf",
+                "title": "PDF 文件",
                 "type": "pdf"
             },
             {
-                "title": "後端開發",
-                "type": "folder",
-                "children": [
-                    {
-                        "id": "5",
-                        "title": "資料庫設計",
-                        "type": "markdown"
-                    }
-                ]
+                "id": "not-exist",
+                "title": "不存在的文件",
+                "type": "markdown"
             }
         ]
     }
