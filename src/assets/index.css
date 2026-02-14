@@ -1,3 +1,12 @@
+.doc-container {
+  max-width: 100%;
+
+  /* 強制在任何字元處換行 */
+  word-break: break-all;
+  /* 如果單字太長，則允許在內部換行 */
+  overflow-wrap: break-word;
+}
+
 .doc-container img {
   /* 限制圖片最大寬度，適應不同螢幕尺寸 */
   max-width: 100%;
