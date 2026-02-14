@@ -20,9 +20,17 @@
 
 ## 圖片
 
+```markdown
+![圖片說明](/vite.jpg)
+
+![{small} 圖片說明](/vite.jpg)
+
+![{medium} 圖片說明](/vite.jpg)
+
+![{large} 圖片說明](/vite.jpg)
 ```
-![圖片說明](https://via.placeholder.com/150)
-```
+
+![圖片說明](/vite.jpg)
 
 ## 表格
 

@@ -1,6 +1,8 @@
 .doc-container img {
   /* 限制圖片最大寬度，適應不同螢幕尺寸 */
-  max-width: 50%;
+  max-width: 100%;
+  /* 手機版預設全寬 */
+  width: 100%;
   /* 維持長寬比 */
   height: auto;
   /* 置中 */
@@ -9,4 +11,23 @@
   margin: 1.5rem auto;
   /* 圓角 */
   border-radius: 8px;
+}
+
+/* 當螢幕寬度大於 768px (平板/電腦) 時，套用 50% 預設值 */
+@media (min-width: 768px) {
+  .doc-container img {
+    width: 50%;
+  }
+
+  .doc-container img[alt*="{small}"] {
+    width: 30%;
+  }
+
+  .doc-container img[alt*="{medium}"] {
+    width: 50%;
+  }
+
+  .doc-container img[alt*="{large}"] {
+    width: 100%;
+  }
 }
