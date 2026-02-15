@@ -121,6 +121,24 @@ _斜體_
 <font color="#fd4340"> 紅色 </font>
 <font color="#F7A004"> 橘色 </font>
 
+### 色塊
+
+:::success
+text
+:::
+
+:::info
+text
+:::
+
+:::warning
+text
+:::
+
+:::danger
+text
+:::
+
 ### GitHub Alert
 
 > [!NOTE]

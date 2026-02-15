@@ -4,11 +4,25 @@
   --r-gray: #dfe2e5;
   --r-dark-gray: #6a737d;
   --r-darkest-gray: #444;
-  --color-note: #0ea5e9;
-  --color-tip: #479c2b;
-  --color-warning: #fbbf24;
-  --color-caution: #ef4444;
-  --color-important: #564dff;
+
+  --color-note-default: #0ea5e9;
+  --color-note-border: #0284c7;
+  --color-note-light: #e0f2fe;
+
+  --color-tip-default: #479c2b;
+  --color-tip-border: #43946c;
+  --color-tip-light: #d9f9e5;
+
+  --color-warning-default: #fbbf24;
+  --color-warning-border: #f59e0b;
+  --color-warning-light: #fef3c799;
+
+  --color-caution-default: #ef4444;
+  --color-caution-border: #ef4444;
+  --color-caution-light: #fee2e299;
+
+  --color-important-default: #564dff;
+  --color-important-light: #7c5fff;
 }
 
 .doc-container {
@@ -19,6 +33,34 @@
   word-break: break-all;
   /* 如果單字太長，則允許在內部換行 */
   overflow-wrap: break-word;
+}
+
+/* 提示框 Admonitions */
+.alert-block {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 5px solid;
+  border-radius: 4px;
+}
+.alert-block.success {
+  background-color: var(--color-tip-light);
+  border-color: var(--color-tip-border);
+  color: var(--color-tip-border);
+}
+.alert-block.info {
+  background-color: var(--color-note-light);
+  border-color: var(--color-note-border);
+  color: var(--color-note-border);
+}
+.alert-block.warning {
+  background-color: var(--color-warning-light);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning-border);
+}
+.alert-block.danger {
+  background-color: var(--color-caution-light);
+  border-color: var(--color-caution-border);
+  color: var(--color-caution-border);
 }
 
 /* 引用區塊樣式 */
@@ -71,38 +113,38 @@ blockquote strong {
 }
 
 .markdown-alert.markdown-alert-note {
-  border-left-color: var(--color-note);
+  border-left-color: var(--color-note-default);
 }
 .markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: var(--color-note);
+  color: var(--color-note-default);
 }
 
 .markdown-alert.markdown-alert-important {
-  border-left-color: var(--color-important);
+  border-left-color: var(--color-important-default);
 }
 .markdown-alert.markdown-alert-important .markdown-alert-title {
-  color: var(--color-important);
+  color: var(--color-important-default);
 }
 
 .markdown-alert.markdown-alert-warning {
-  border-left-color: var(--color-warning);
+  border-left-color: var(--color-warning-default);
 }
 .markdown-alert.markdown-alert-warning .markdown-alert-title {
-  color: var(--color-warning);
+  color: var(--color-warning-default);
 }
 
 .markdown-alert.markdown-alert-tip {
-  border-left-color: var(--color-tip);
+  border-left-color: var(--color-tip-default);
 }
 .markdown-alert.markdown-alert-tip .markdown-alert-title {
-  color: var(--color-tip);
+  color: var(--color-tip-default);
 }
 
 .markdown-alert.markdown-alert-caution {
-  border-left-color: var(--color-caution);
+  border-left-color: var(--color-caution-default);
 }
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
-  color: var(--color-caution);
+  color: var(--color-caution-default);
 }
 
 /* 螢光筆樣式 */
