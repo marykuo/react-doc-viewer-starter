@@ -1,21 +1,16 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-
-// 將 ==text== 轉換成 <mark>text</mark>
-const transformHighlight = (text) => {
-  return text
-    .replace(/==\((.*?)\)(.*?)==/g, '<mark class="$1">$2</mark>')
-    .replace(/==(.*?)==/g, (match, p1) => {
-      return match.startsWith("==( ") ? match : `<mark>${p1}</mark>`;
-    });
-};
+import remarkFlexibleMarkers from "remark-flexible-markers";
 
 export default function MarkdownView({ content }) {
   return (
     <article>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-        {transformHighlight(content)}
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkFlexibleMarkers]}
+        rehypePlugins={[rehypeRaw]}
+      >
+        {content}
       </ReactMarkdown>
     </article>
   );

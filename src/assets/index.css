@@ -31,23 +31,33 @@ blockquote strong {
 }
 
 /* 螢光筆樣式 */
-mark {
-  background-color: #fff5b1;
+mark.flexible-marker,
+mark.flexible-marker-yellow {
+  background-color: rgb(255, 255, 64);
   border-radius: 2px;
   padding: 2px 4px;
   margin: 0 2px;
 }
-mark.red {
-  background-color: #f28b82 !important;
+mark.flexible-marker-red {
+  background-color: rgb(255, 160, 160) !important;
 }
-mark.green {
-  background-color: #c4f1be !important;
+mark.flexible-marker-orange {
+  background-color: rgb(255, 165, 0) !important;
 }
-mark.blue {
-  background-color: #d1e9ff !important;
+mark.flexible-marker-green {
+  background-color: rgb(128, 255, 128) !important;
 }
-mark.purple {
-  background-color: #e3d1ff !important;
+mark.flexible-marker-cyan {
+  background-color: rgb(128, 255, 255) !important;
+}
+mark.flexible-marker-blue {
+  background-color: rgb(0, 128, 255) !important;
+}
+mark.flexible-marker-purple {
+  background-color: rgb(192, 128, 192) !important;
+}
+mark.flexible-marker-gray {
+  background-color: rgb(192, 192, 192) !important;
 }
 
 table {
