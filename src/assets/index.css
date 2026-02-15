@@ -1,7 +1,9 @@
 :root {
   --r-background-color: #fdfdfd;
   --r-light-gray: #f6f8fa;
-  --r-dark-gray: #dfe2e5;
+  --r-gray: #dfe2e5;
+  --r-dark-gray: #6a737d;
+  --r-darkest-gray: #444;
 }
 
 .doc-container {
@@ -12,6 +14,20 @@
   word-break: break-all;
   /* 如果單字太長，則允許在內部換行 */
   overflow-wrap: break-word;
+}
+
+/* 引用區塊樣式 */
+blockquote {
+  padding: 0 1em;
+  color: var(--r-dark-gray);
+  /* 左側淡灰色粗線 */
+  border-left: 0.25em solid var(--r-gray);
+  margin: 0 0 16px 0;
+}
+
+/* 引用內的強烈文字 (bold) */
+blockquote strong {
+  color: var(--r-darkest-gray);
 }
 
 table {
@@ -26,7 +42,7 @@ table {
 table th,
 table td {
   padding: 6px 13px;
-  border: 1px solid var(--r-dark-gray);
+  border: 1px solid var(--r-gray);
 }
 
 /* 表格標題 */
