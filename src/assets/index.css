@@ -1,10 +1,60 @@
+:root {
+  --r-background-color: #fdfdfd;
+  --r-light-gray: #f6f8fa;
+  --r-dark-gray: #dfe2e5;
+}
+
 .doc-container {
+  background-color: var(--r-background-color);
   max-width: 100%;
 
   /* 強制在任何字元處換行 */
   word-break: break-all;
   /* 如果單字太長，則允許在內部換行 */
   overflow-wrap: break-word;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 16px;
+  display: block;
+  /* 當表格內容太多時，自動產生水平捲軸 */
+  overflow-x: auto;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid var(--r-dark-gray);
+}
+
+/* 表格標題 */
+table th {
+  font-weight: 600;
+  background-color: var(--r-light-gray);
+}
+
+/* 隔行變色 (Zebra Stripes) */
+table tr:nth-child(2) {
+  background-color: var(--r-background-color);
+}
+table tr:nth-child(even) {
+  background-color: var(--r-light-gray);
+}
+
+/* 對齊方式 */
+table th[align="left"],
+table td[align="left"] {
+  text-align: left;
+}
+table th[align="center"],
+table td[align="center"] {
+  text-align: center;
+}
+table th[align="right"],
+table td[align="right"] {
+  text-align: right;
 }
 
 .doc-container img {
