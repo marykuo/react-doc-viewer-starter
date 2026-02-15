@@ -4,7 +4,11 @@ import rehypeRaw from "rehype-raw";
 
 // 將 ==text== 轉換成 <mark>text</mark>
 const transformHighlight = (text) => {
-  return text.replace(/==(.*?)==/g, "<mark>$1</mark>");
+  return text
+    .replace(/==\((.*?)\)(.*?)==/g, '<mark class="$1">$2</mark>')
+    .replace(/==(.*?)==/g, (match, p1) => {
+      return match.startsWith("==( ") ? match : `<mark>${p1}</mark>`;
+    });
 };
 
 export default function MarkdownView({ content }) {
