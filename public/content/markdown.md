@@ -64,6 +64,48 @@
 > >
 > > > 子子**引用區塊**
 
+### 粗體、斜體
+
+```markdown
+*斜體*
+_斜體_
+**粗體**
+```
+
+👇 以上範例結果為：
+
+*斜體*
+_斜體_
+**粗體**
+
+### 內容強調
+
+#### 螢光筆
+
+```markdown
+==螢光筆==
+```
+
+👇 以上範例結果為：
+
+==螢光筆==
+
+#### 文字顏色
+
+```markdown
+<font color="#96999A"> 灰色 </font>
+<font color="#aa57fc"> 紫色 </font>
+<font color="#449df9"> 藍色 </font>
+<font color="#fd4340"> 紅色 </font>
+<font color="#F7A004"> 橘色 </font>
+```
+
+<font color="#96999A"> 灰色 </font>
+<font color="#aa57fc"> 紫色 </font>
+<font color="#449df9"> 藍色 </font>
+<font color="#fd4340"> 紅色 </font>
+<font color="#F7A004"> 橘色 </font>
+
 ## 圖片
 
 ```markdown

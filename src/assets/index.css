@@ -30,6 +30,14 @@ blockquote strong {
   color: var(--r-darkest-gray);
 }
 
+/* 螢光筆樣式 */
+mark {
+  background-color: #fff5b1;
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
