@@ -4,6 +4,11 @@
   --r-gray: #dfe2e5;
   --r-dark-gray: #6a737d;
   --r-darkest-gray: #444;
+  --color-note: #0ea5e9;
+  --color-tip: #479c2b;
+  --color-warning: #fbbf24;
+  --color-caution: #ef4444;
+  --color-important: #564dff;
 }
 
 .doc-container {
@@ -28,6 +33,76 @@ blockquote {
 /* 引用內的強烈文字 (bold) */
 blockquote strong {
   color: var(--r-darkest-gray);
+}
+
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: 0.25em solid;
+}
+.markdown-alert > :first-child {
+  margin-top: 0;
+}
+.markdown-alert > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1;
+}
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  overflow: visible !important;
+
+  -webkit-mask: var(--oct-icon) no-repeat;
+  mask: var(--oct-icon) no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-color: currentColor;
+  color: inherit;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 1em;
+  height: 1em;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
 }
 
 /* 螢光筆樣式 */
