@@ -212,6 +212,17 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
+```java
+public class MyService {
+    private final static PI = 3.142;
+
+    public Sting execute(String loginMemberId) {
+        log.info("execute(): {}", loginMemberId);
+    }
+
+}
+```
+
 ---
 
 ### 插入圖片

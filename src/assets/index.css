@@ -77,6 +77,18 @@ blockquote strong {
   color: var(--r-darkest-gray);
 }
 
+/* 程式碼 */
+pre {
+  overflow-x: auto;
+}
+.inline-code {
+  background-color: var(--r-gray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
 .markdown-alert {
   padding: 0.5rem 1rem;
   margin-bottom: 16px;
